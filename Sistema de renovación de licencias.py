@@ -42,7 +42,6 @@ def es_clave_pago_valida(clave_pago):
     if len(clave_pago) == 10:
         return True
     else:
-        print("Clave de pago inválida")
         return False
 
 #Contador de intentos
@@ -64,7 +63,7 @@ while intentos < 3:  # Limitar a 3 intentos
     ):
         # Tercer paso: Proceso de pago
         clave_pago = input("Ingrese la clave de pago (10 dígitos): ")
-        if es_clave_pago_valida(clave_pago):
+        if es_clave_pago_valida(clave_pago): #Cuarto Paso
             # Quinto paso: Finalización
             print("¡La renovación de su licencia ha sido exitosa!")
             break
