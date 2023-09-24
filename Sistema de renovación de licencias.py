@@ -63,16 +63,16 @@ while intentos < 3:  # Limitar a 3 intentos
     ):
         # Tercer paso: Proceso de pago
         clave_pago = input("Ingrese la clave de pago (10 dígitos): ")
-        if es_clave_pago_valida(clave_pago): #Cuarto Paso
-            # Quinto paso: Finalización
-            print("¡La renovación de su licencia ha sido exitosa!")
-            break
-        else:
-            print("Clave de pago inválida. Intente nuevamente.")
+        while not es_clave_pago_valida(clave_pago): #Cuarto paso
+            print("clave de pago inválida. Debe contener 10 dígitos, intente nuevamente.")
+            clave_pago = input("Ingrese la clave de pago a 10 dígitos: ")
+        #Quinto paso: finalización
+        print("¡La renovación de su licencia ha sido exitosa!")
+        break
     else:
-        print("Por favor, verifique sus datos.")
         intentos += 1
+        if intentos != 3:
+            print("Por favor verifique sus datros. Le quedan ",3-intentos," intentos")
 
 if intentos == 3:
     print("Ha alcanzado el límite de intentos. Reinicie el proceso.")
-
