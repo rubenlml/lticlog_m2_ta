@@ -39,8 +39,11 @@ def es_numero_licencia_valido(numero_licencia):
 
 # Función para verificar si la clave de pago es válida
 def es_clave_pago_valida(clave_pago):
-    #Agregar validación
-    return True
+    if len(clave_pago) == 10:
+        return True
+    else:
+        print("Clave de pago inválida")
+        return False
 
 #Contador de intentos
 intentos = 0
