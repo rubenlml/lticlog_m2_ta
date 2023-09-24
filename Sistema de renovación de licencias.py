@@ -63,7 +63,7 @@ while intentos < 3:  # Limitar a 3 intentos
         es_numero_licencia_valido(numero_licencia)
     ):
         # Tercer paso: Proceso de pago
-        clave_pago = input("Ingrese la clave de pago: ")
+        clave_pago = input("Ingrese la clave de pago (10 dígitos): ")
         if es_clave_pago_valida(clave_pago):
             # Quinto paso: Finalización
             print("¡La renovación de su licencia ha sido exitosa!")
